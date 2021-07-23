@@ -45,13 +45,13 @@ userRouter
         html: `<div>
       </div> Hello ${data.name} Thanks for your response we will contact you soon!!`,
       };
-      // transporter.sendMail(mailOptions, function (error, info) {
-      //   if (error) {
-      //     console.log(error);
-      //   } else {
-      //     console.log("Email sent: " + info.response);
-      //   }
-      // });
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
       res.status(200).send({
         message: "Data sent successfully",
       });
